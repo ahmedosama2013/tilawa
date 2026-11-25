@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <script>if (location.protocol !== 'file:') { var p = location.pathname.replace(/surah\/.*$/i, ''); document.write('<base href="' + p.slice(0, p.lastIndexOf('/') + 1) + '">'); }</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b1519">
+  <meta name="description" content="Read the Quran with translation and listen to five reciters, ayah by ayah.">
+  <title>Tilawa: Read and listen to the Quran</title>
+
+  <link rel="preconnect" href="https://api.alquran.cloud">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Instrument+Sans:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+  <a class="skip-link" href="#reader">Skip to the text</a>
+
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open surah list" aria-controls="sidebar" aria-expanded="false"></button>
+    <a class="brand" href="surah/1" aria-label="Tilawa, home">
+      <span class="brand-mark" aria-hidden="true">تلاوة</span>
+      <span class="brand-name">Tilawa</span>
+    </a>
+
+    <div class="topbar-tools">
+      <div class="dd" id="translationMenu"></div>
+      <div class="stepper" role="group" aria-label="Arabic text size">
+        <button type="button" id="fontDown" aria-label="Smaller Arabic text">A-</button>
+        <button type="button" id="fontUp" aria-label="Larger Arabic text">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Surah navigation">
+    <div class="tabs" role="tablist" aria-label="Browse">
+      <button type="button" role="tab" id="tabSurahs" aria-selected="true" aria-controls="panelSurahs">Surahs</button>
+      <button type="button" role="tab" id="tabSaved" aria-selected="false" aria-controls="panelSaved" tabindex="-1">Saved</button>
+    </div>
+
+    <div class="panel" id="panelSurahs" role="tabpanel" aria-labelledby="tabSurahs">
+      <div class="search">
+        <input id="search" type="search" placeholder="Search surahs" aria-label="Search surahs" autocomplete="off">
+      </div>
+      <ol class="surah-list" id="surahList"></ol>
+    </div>
+
+    <div class="panel" id="panelSaved" role="tabpanel" aria-labelledby="tabSaved" hidden>
+      <ul class="saved-list" id="savedList"></ul>
+    </div>
+    <footer class="credits">
+      <p>Made by <a href="mailto:ahmedosama2013b@gmail.com">ahmedosama2013b@gmail.com</a></p>
+      <button type="button" class="link-btn" id="aboutBtn">About Tilawa</button>
+    </footer>
+  </aside>
+
+  <main class="reader" id="reader" tabindex="-1" aria-busy="true">
+    <p class="status">Loading the Quran…</p>
+  </main>
+
+  <footer class="player" id="player" aria-label="Audio player">
+    <div class="now">
+      <p class="now-title" id="nowTitle">Nothing playing</p>
+      <p class="now-sub" id="nowSub">Press play to start from ayah 1</p>
+    </div>
+
+    <div class="controls">
+      <button class="icon-btn" id="prevBtn" type="button" aria-label="Previous ayah"></button>
+      <button class="play-btn" id="playBtn" type="button" aria-label="Play"></button>
+      <button class="icon-btn" id="nextBtn" type="button" aria-label="Next ayah"></button>
+    </div>
+
+    <div class="seek">
+      <span id="timeNow">0:00</span>
+      <input id="seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek within this ayah">
+      <span id="timeTotal">0:00</span>
+    </div>
+
+    <div class="dd dd-sm dd-up reciter-dd" id="reciters"></div>
+
+    <div class="opts">
+      <button class="chip-btn" id="repeatBtn" type="button" aria-pressed="false" title="Repeat this ayah"></button>
+      <div class="dd dd-sm dd-up" id="speedMenu"></div>
+    </div>
+  </footer>
+
+  <dialog class="welcome" id="welcome" aria-labelledby="welcomeTitle">
+    <p class="welcome-mark" lang="ar" dir="rtl" aria-hidden="true">تلاوة</p>
+    <h2 id="welcomeTitle">Welcome to Tilawa</h2>
+    <p>Read the Quran with a translation and listen ayah by ayah in the voice of five reciters.</p>
+    <ul>
+      <li>Press play on any ayah to start listening from there.</li>
+      <li>Choose a reciter and playback speed in the player.</li>
+      <li>Bookmark an ayah to find it again in the Saved tab.</li>
+    </ul>
+    <button type="button" class="primary" id="welcomeClose" autofocus>Start reading</button>
+    <p class="welcome-credit">Made by <a href="mailto:ahmedosama2013b@gmail.com">ahmedosama2013b@gmail.com</a></p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
