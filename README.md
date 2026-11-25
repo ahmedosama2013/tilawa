@@ -1,6 +1,6 @@
 # 🌙 Tilawa
 
-**Tilawa** is a clean, dark-mode Quran reader and audio player built with plain HTML, CSS, and JavaScript to make reading the Holy Quran with translations and listening ayah by ayah accessible, structured, and distraction-free.
+**Tilawa** is a clean, dark-mode Quran reader and audio player to make reading the Holy Quran with translations and listening ayah by ayah accessible, structured, and distraction-free.
 
 ## ✨ Features
 - **The Holy Quran:** Read all 114 surahs in Uthmani Arabic script (Amiri Quran) with adjustable text sizes, quick search by name or number, and shareable deep links to any surah or ayah.
