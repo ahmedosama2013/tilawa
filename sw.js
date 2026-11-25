@@ -1,4 +1,4 @@
-const VERSION = 'tilawa-v4';
+const VERSION = 'tilawa-v1';
 const SHELL = ['./', 'index.html', 'style.css', 'script.js', 'manifest.json', 'icon.svg', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 const API_HOST = 'api.alquran.cloud';
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
