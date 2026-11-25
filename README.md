@@ -21,4 +21,5 @@ Al-Quran Cloud (api.alquran.cloud): supplies the Uthmani Quran text, translation
 Quran audio hosting: the recitation audio files are streamed from `cdn.islamic.network` (Alafasy, Al-Husary, Abdul Basit) and `everyayah.com` (Yasser Al-Dosari, Abdul Rahman Al-Sudais).
 
 Made By : ahmedosama2013b@gmail.com
+
 Link : https://tilawa.netlify.app
