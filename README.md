@@ -22,4 +22,6 @@ Quran audio hosting: the recitation audio files are streamed from `cdn.islamic.n
 
 Made By : ahmedosama2013b@gmail.com
 
-Link : https://tilawa.netlify.app
+Link : https://tilawaquranapp.netlify.app
+
+<img width="1889" height="1080" alt="Tilawa" src="https://github.com/user-attachments/assets/936caadf-6296-42d7-96e0-a9aedaf50696" />
